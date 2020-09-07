@@ -1,0 +1,88 @@
+package com.cts.bean;
+import java.util.Date;
+
+import javax.persistence.*;
+
+public class Loan {
+
+	@Entity
+	@Table(name = "User")
+	public class User {
+	    @Id
+	    private String loanNumber;
+	    private long loanAmount;
+	    private int loanTerm;
+	    private String firstName;
+	    private String contactNo;
+	    private String status;
+	    private Date originalDate;
+	    private String legalDocuments;
+		public String getLoanNumber() {
+			return loanNumber;
+		}
+		public void setLoanNumber(String loanNumber) {
+			this.loanNumber = loanNumber;
+		}
+		public long getLoanAmount() {
+			return loanAmount;
+		}
+		public void setLoanAmount(long loanAmount) {
+			this.loanAmount = loanAmount;
+		}
+		public int getLoanTerm() {
+			return loanTerm;
+		}
+		public void setLoanTerm(int loanTerm) {
+			this.loanTerm = loanTerm;
+		}
+		public String getFirstName() {
+			return firstName;
+		}
+		public void setFirstName(String firstName) {
+			this.firstName = firstName;
+		}
+		public String getContactNo() {
+			return contactNo;
+		}
+		public void setContactNo(String contactNo) {
+			this.contactNo = contactNo;
+		}
+		public String getStatus() {
+			return status;
+		}
+		public void setStatus(String status) {
+			this.status = status;
+		}
+		public Date getOriginalDate() {
+			return originalDate;
+		}
+		public void setOriginalDate(Date originalDate) {
+			this.originalDate = originalDate;
+		}
+		public String getLegalDocuments() {
+			return legalDocuments;
+		}
+		public void setLegalDocuments(String legalDocuments) {
+			this.legalDocuments = legalDocuments;
+		}
+		public User(String loanNumber, long loanAmount, int loanTerm, String firstName, String contactNo, String status,
+				Date originalDate, String legalDocuments) {
+			super();
+			this.loanNumber = loanNumber;
+			this.loanAmount = loanAmount;
+			this.loanTerm = loanTerm;
+			this.firstName = firstName;
+			this.contactNo = contactNo;
+			this.status = status;
+			this.originalDate = originalDate;
+			this.legalDocuments = legalDocuments;
+		}
+		public User() {
+			super();
+		}
+		
+	    
+
+
+}
+}

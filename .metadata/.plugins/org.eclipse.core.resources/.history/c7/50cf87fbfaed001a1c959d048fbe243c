@@ -1,0 +1,9 @@
+package com.cts.repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.cts.bean.User;
+
+public interface LoginRepository extends JpaRepository<User,String> {
+	User findByEmail(String email);
+
+}

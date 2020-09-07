@@ -1,0 +1,33 @@
+package com.cts.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import com.cts.bean.User;
+import com.cts.repository.UserRepository;
+
+@Service
+public class UserService implements UserDetailsService {
+	
+	@Autowired
+	private UserRepository repo;
+
+	@Override
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+		// TODO Auto-generated method stub
+		User user=repo.findByEmail(email);
+		UserDetailService details=null;
+		if(user!=null) {
+			details=new UserDetailService();
+			details.setUser(user);
+		}else {
+			throw new UsernameNotFoundException("User not exists"+email);
+		}
+		return details;
+	}
+	
+
+}

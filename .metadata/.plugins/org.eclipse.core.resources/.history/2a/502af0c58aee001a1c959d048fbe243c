@@ -1,0 +1,9 @@
+package com.cts.repository;
+import org.springframework.data.repository.CrudRepository;
+
+import com.cts.bean.User;
+
+public interface LoginRepository extends CrudRepository<User,String> {
+    User findByEmail(String email);
+
+}
